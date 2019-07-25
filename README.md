@@ -19,11 +19,11 @@ git clone https://github.com/cyber-carpentry/Group5-protein-domain-evolution-pro
 ```
 3. Download the dataset (fasta, pfam, species.label; test data available) and copy into the project directory.
 ```
-scp -r <download dir>/data $USERNAME@xxx.xxx.xxx.xx:/home/$USERNAME/protein-domain-evolution-project/
+scp -r data $USERNAME@xxx.xxx.xxx.xx:/home/$USERNAME/protein-domain-evolution-project/
 ```
 ## 3. Build a Docker container
 ### 3.1 Starting from Dockerfile
-1. Install make, perl, hmmer, pfamscan
+1. Install make, perl #v5.22.1, hmmer, pfamscan
 ```bash
 FROM ubuntu:16.04
 RUN apt-get update && \
@@ -34,12 +34,12 @@ RUN apt-get update && \
 2. Install python3 and libs to run the scripts
 ```
 RUN apt-get update \
-  && apt-get install -y python3-pip python3-dev  #Version:Python 3.5.2
-RUN pip3 install pandas #Version:0.24.2
-RUN pip3 install rpy2   #Version:3.0.5
-RUN pip3 install scipy  #Version:1.3.0
-RUN pip3 install sklearn  #Version:0.21.2
-RUN pip3 install matplotlib #Version:3.0.3
+  && apt-get install -y python3-pip python3-dev  #vPython 3.5.2
+RUN pip3 install pandas #v0.24.2
+RUN pip3 install rpy2   #v3.0.5
+RUN pip3 install scipy  #v1.3.0
+RUN pip3 install sklearn  #v0.21.2
+RUN pip3 install matplotlib #v3.0.3
 ```
 3. Install snakemake as the workflow management system
 ```
